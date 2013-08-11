@@ -1,6 +1,6 @@
 # 4lejandrito does dotfiles
 
-These are my dotfiles based on those great from [Holman](https://github.com/holman/dotfiles)
+These are my dotfiles based on those great from [Holman](https://github.com/holman/dotfiles).
 
 ## install
 
