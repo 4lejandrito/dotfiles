@@ -7,13 +7,8 @@ These are my dotfiles based on those great from [Holman](https://github.com/holm
 Run this:
 
 ```sh
-git clone https://github.com/4lejandrito/dotfiles.git ~/.dotfiles
-cd ~/.dotfiles
-git submodule init
-git submodule update
-script/bootstrap
-```
-
+sh <(curl -s https://raw.github.com/4lejandrito/dotfiles/master/bootstrap)
+``` 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
 

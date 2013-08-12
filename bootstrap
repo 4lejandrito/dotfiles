@@ -2,7 +2,7 @@
 #
 # bootstrap installs things.
 
-export DOTFILES_ROOT="`pwd`"
+export DOTFILES_ROOT=~/.dotfiles
 export DOTFILES=$DOTFILES_ROOT
 
 set -e
@@ -52,6 +52,21 @@ setup_gitconfig () {
 link_files () {
   ln -s $1 $2
   success "linked $1 to $2"
+}
+
+download_dotfiles () {  
+  if [ ! -d $DOTFILES ]
+  then
+    info "cloning repository"  
+    git clone https://github.com/4lejandrito/dotfiles.git ~/.dotfiles
+    success "repository cloned"  
+  fi
+    
+  cd $DOTFILES
+
+  info "updating repository"
+  git pull -q && git submodule init && git submodule update
+  success "repository updated"
 }
 
 install_dotfiles () {
@@ -121,20 +136,12 @@ install_dotfiles () {
   done
 }
 
+download_dotfiles
 setup_gitconfig
 install_dotfiles
 
-# If we are on a mac, lets install and setup homebrew
-if [ "$(uname -s)" == "Darwin" ]
-then
-  info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
-fi
+# Find the installers and run them
+find */install.sh | while read installer ; do info "installing $installer"; sh -c "${installer}" ; success "$installer"; done
 
 echo ''
 echo '  All installed!'
