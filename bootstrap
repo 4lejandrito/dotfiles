@@ -58,14 +58,14 @@ download_dotfiles () {
   if [ ! -d $DOTFILES ]
   then
     info "cloning repository"  
-    git clone https://github.com/4lejandrito/dotfiles.git ~/.dotfiles
+    git clone https://github.com/4lejandrito/dotfiles.git ~/.dotfiles -q
     success "repository cloned"  
   fi
     
   cd $DOTFILES
 
   info "updating repository"
-  git pull -q && git submodule init && git submodule update
+  git pull -q && git submodule init -q && git submodule update -q
   success "repository updated"
 }
 
