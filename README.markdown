@@ -6,8 +6,8 @@ These are my dotfiles based on those great from [Holman](https://github.com/holm
 
 Run this:
 
-```sh
-sh <(curl -s https://raw.github.com/4lejandrito/dotfiles/master/bootstrap)
+```bash
+bash <(curl -s https://raw.github.com/4lejandrito/dotfiles/master/bootstrap)
 ``` 
 This will symlink the appropriate files in `.dotfiles` to your home directory.
 Everything is configured and tweaked within `~/.dotfiles`.
