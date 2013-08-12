@@ -1,13 +1,13 @@
-#Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-#Dotfiles shortcut
+# Dotfiles shortcut
 export DOTFILES=$HOME/.dotfiles
 
-#Projects folder so that we can `c [tab]` to
+# Projects folder so that we can `c [tab]` to
 export PROJECT_PATHS=~/Projects
 mkdir -p $PROJECT_PATHS
-ln -sf $DOTFILES $PROJECT_PATHS/dotfiles
+ln -snf $DOTFILES $PROJECT_PATHS/dotfiles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
