@@ -6,6 +6,8 @@ export DOTFILES=$HOME/.dotfiles
 
 #Projects folder so that we can `c [tab]` to
 export PROJECT_PATHS=~/Projects
+mkdir -p $PROJECT_PATHS
+ln -sf $DOTFILES $PROJECT_PATHS/dotfiles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
