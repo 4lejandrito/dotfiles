@@ -1,1 +1,1 @@
-alias http='python -m SimpleHTTPServer 8080'
+alias http='python -m SimpleHTTPServer 9090'

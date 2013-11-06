@@ -14,6 +14,6 @@ then
 fi
 
 # Install homebrew packages
-brew install spark
+brew install maven ant
 
 exit 0
