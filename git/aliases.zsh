@@ -20,3 +20,4 @@ alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
            perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 alias gsm="git submodule init && git submodule update"
 alias gdl="git reset --soft HEAD~1"
+alias gpa="find $PROJECT_PATHS -maxdepth 1 -type d -exec sh -c '(cd {} && git pull -r)' ';'"
